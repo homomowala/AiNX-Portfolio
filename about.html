@@ -9,13 +9,17 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+  <div id="loader">
+    <div class="loader-ring">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
-    <div class="max-w-2xl">
-      <h1 class="text-4xl text-orange-400 font-bold mb-4">About Me</h1>
-      <p class="text-gray-300">
-        I'm AiNX — a passionate full-stack Minecraft and Discord server developer.  
-        I specialize in setting up and maintaining community servers, bots, and backend systems that help small businesses and gaming communities thrive.
-      </p>
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-4">About Me</h1>
+      <p class="text-lg text-gray-300">I'm AiNX, a full-stack Minecraft/Discord server developer who helps small businesses build and manage their communities. I specialize in backend setup, bot integrations, and server optimizations.</p>
     </div>
 
     <a href="index.html?from=left" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
@@ -31,7 +35,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const from = urlParams.get("from");
     if (from === "left") body.classList.add("swipe-left");
-    else body.classList.add("swipe-right");
+    else if (from === "right") body.classList.add("swipe-right");
   </script>
 </body>
 </html>
