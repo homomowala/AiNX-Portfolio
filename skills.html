@@ -2,96 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills - AiNX</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <style>
-    .skill-circle {
+    body {
+      background: linear-gradient(to bottom right, #1f1f1f, #000000);
+      font-family: monospace;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .skill-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    .circle-skill {
       position: relative;
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      overflow: hidden;
       background: #2b2b2b;
+      overflow: hidden;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      margin: auto;
     }
 
-    .wave {
+    .circle-fill {
       position: absolute;
       width: 200%;
       height: 200%;
-      top: 100%;
       left: -50%;
+      top: 100%;
       background: rgba(255, 255, 255, 0.6);
       border-radius: 40%;
-      animation: wave 4s infinite linear;
-      transform: translateY(-50%);
+      animation: waveRotate 4s linear infinite;
     }
 
-    @keyframes wave {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    .circle-skill .fill-wrap {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
     }
 
-    .skill-container {
-      position: relative;
-      text-align: center;
-      color: white;
-    }
-
-    .skill-label {
+    .circle-label {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 1.1rem;
+      z-index: 2;
+      text-align: center;
       font-weight: bold;
+      font-size: 1rem;
     }
 
-    .fill-94 .wave {
-      top: 6%;
+    /* Animate up for Minecraft */
+    .skill-minecraft .fill-wrap {
+      animation: riseMinecraft 2.5s ease-out forwards;
     }
 
-    .fill-89 .wave {
-      top: 11%;
+    @keyframes riseMinecraft {
+      to { transform: translateY(-93.7%); }
+    }
+
+    /* Animate up for Discord */
+    .skill-discord .fill-wrap {
+      animation: riseDiscord 2.5s ease-out forwards;
+    }
+
+    @keyframes riseDiscord {
+      to { transform: translateY(-89%); }
+    }
+
+    /* Wavy motion */
+    @keyframes waveRotate {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      100% { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fb923c;
+      transition: 0.3s;
+    }
+
+    .arrow:hover {
+      color: #fbbf77;
     }
   </style>
 </head>
-<body class="text-white font-mono swipe-left">
+<body>
 
-  <section class="flex flex-col items-center justify-center min-h-screen px-4 text-center">
+  <section class="min-h-screen flex flex-col items-center justify-center relative">
     <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-10">My Skills</h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- Minecraft Dev Skill -->
-      <div class="skill-container">
-        <div class="skill-circle fill-94">
-          <div class="wave"></div>
-          <div class="skill-label">Minecraft Dev<br>93.7%</div>
+    <div class="skill-container">
+      <!-- Minecraft Dev -->
+      <div class="circle-skill skill-minecraft">
+        <div class="fill-wrap">
+          <div class="circle-fill"></div>
+        </div>
+        <div class="circle-label">
+          Minecraft<br>93.7%
         </div>
       </div>
 
-      <!-- Discord Server Dev Skill -->
-      <div class="skill-container">
-        <div class="skill-circle fill-89">
-          <div class="wave"></div>
-          <div class="skill-label">Discord Dev<br>89%</div>
+      <!-- Discord Dev -->
+      <div class="circle-skill skill-discord">
+        <div class="fill-wrap">
+          <div class="circle-fill"></div>
+        </div>
+        <div class="circle-label">
+          Discord<br>89%
         </div>
       </div>
-
     </div>
 
     <!-- Arrows -->
-    <a href="about.html?from=left" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
-      <i class="ph ph-arrow-left text-4xl"></i>
+    <a href="about.html?from=left" class="arrow left-4">
+      <i class="ph ph-arrow-left"></i>
     </a>
-    <a href="contact.html?from=right" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
-      <i class="ph ph-arrow-right text-4xl"></i>
+    <a href="contact.html?from=right" class="arrow right-4">
+      <i class="ph ph-arrow-right"></i>
     </a>
   </section>
 
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </body>
 </html>
