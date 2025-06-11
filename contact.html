@@ -1,0 +1,59 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Contact - AiNX</title>  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>  
+  <style>  
+    body {  
+      background: linear-gradient(to bottom right, #1f1f1f, #000000);  
+    }  
+    .fade-in {  
+      animation: fadeIn 1.2s ease-in-out forwards;  
+      opacity: 0;  
+    }  
+    @keyframes fadeIn {  
+      to {  
+        opacity: 1;  
+      }  
+    }  
+    input, textarea {  
+      background-color: #2b2b2b;  
+    }  
+  </style>  
+</head>  
+<body class="text-white font-mono fade-in">    <!-- Main Content -->    <section class="flex items-center justify-center min-h-screen text-center px-6 relative">  
+    <div class="max-w-xl w-full">  
+      <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-6">Contact Me</h1>  <form class="space-y-5">  
+    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition" required>  
+
+    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition" required>  
+
+    <textarea rows="5" placeholder="Your Description" class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none" required></textarea>  
+
+    <button type="submit" class="bg-orange-500 hover:bg-orange-400 px-6 py-3 rounded-full transition shadow-md w-full">  
+      Contact Me  
+    </button>  
+  </form>  
+
+  <!-- Discord note -->  
+  <p class="mt-6 text-sm text-gray-400">
+
+Or join my Discord:
+<a href="https://discord.gg/nxTznunYUm" target="_blank" class="text-orange-400 underline hover:text-orange-300 transition">
+AiNX Community
+</a>
+
+</p>  
+    </div>  <!-- Arrows -->  
+<a href="skills.html" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">  
+  <i class="ph ph-arrow-left text-4xl"></i>  
+</a>  
+<a href="index.html" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">  
+  <i class="ph ph-house text-4xl"></i>  
+</a>
+
+  </section>  
+</body>  
+</html>
