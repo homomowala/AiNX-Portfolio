@@ -5,43 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - AiNX</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #1f1f1f, #000000);
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in-out forwards;
-      opacity: 0;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
 </head>
-<body class="text-white font-mono fade-in">
-
-  <!-- Main Centered Content -->
+<body>
   <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
     <div class="max-w-2xl">
-      <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-6">About Me</h1>
-      <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-        Hey! I'm <span class="text-orange-400 font-semibold">AiNX</span> — a full-stack Minecraft and Discord server developer who works with small businesses, communities, and gaming networks to build smooth, scalable setups. Whether it's custom plugins, Pterodactyl environments, or Discord automation, I deliver efficient and professional solutions tailored to your needs.
+      <h1 class="text-4xl text-orange-400 font-bold mb-4">About Me</h1>
+      <p class="text-gray-300">
+        I'm AiNX — a passionate full-stack Minecraft and Discord server developer.  
+        I specialize in setting up and maintaining community servers, bots, and backend systems that help small businesses and gaming communities thrive.
       </p>
     </div>
 
-    <!-- Left Arrow (back to index.html) -->
-    <a href="index.html" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+    <a href="index.html?from=left" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
       <i class="ph ph-arrow-left text-4xl"></i>
     </a>
-
-    <!-- Right Arrow (to skills.html) -->
-    <a href="skills.html" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+    <a href="skills.html?from=right" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
       <i class="ph ph-arrow-right text-4xl"></i>
     </a>
   </section>
 
+  <script>
+    const body = document.body;
+    const urlParams = new URLSearchParams(window.location.search);
+    const from = urlParams.get("from");
+    if (from === "left") body.classList.add("swipe-left");
+    else body.classList.add("swipe-right");
+  </script>
 </body>
 </html>
