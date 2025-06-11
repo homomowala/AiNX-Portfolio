@@ -5,66 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills - AiNX</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #1f1f1f, #000000);
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in-out forwards;
-      opacity: 0;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Bar animation */
-    .bar-fill {
-      transition: width 2s ease-in-out;
-    }
-  </style>
 </head>
-<body class="text-white font-mono fade-in">
-
-  <!-- Main Content -->
+<body>
   <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
-    <div class="max-w-xl w-full space-y-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-6">My Skills</h1>
+    <div class="max-w-lg w-full">
+      <h1 class="text-4xl text-orange-400 font-bold mb-8">My Skills</h1>
 
-      <!-- Minecraft Dev -->
       <div class="text-left">
-        <p class="mb-2 text-gray-300">Minecraft Development <span class="text-orange-400">93.7%</span></p>
-        <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
-          <div class="bg-orange-400 h-4 bar-fill rounded-full" style="width: 0%;" id="mcBar"></div>
+        <p class="text-lg font-semibold">Minecraft Development <span class="float-right">93.7%</span></p>
+        <div class="skill-bar">
+          <div class="skill-fill" style="--fill: 93.7%;"></div>
         </div>
-      </div>
 
-      <!-- Discord Server Dev -->
-      <div class="text-left">
-        <p class="mt-6 mb-2 text-gray-300">Discord Server Development <span class="text-orange-400">89%</span></p>
-        <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
-          <div class="bg-orange-400 h-4 bar-fill rounded-full" style="width: 0%;" id="discordBar"></div>
+        <p class="text-lg font-semibold mt-6">Discord Server Development <span class="float-right">89%</span></p>
+        <div class="skill-bar">
+          <div class="skill-fill" style="--fill: 89%;"></div>
         </div>
       </div>
     </div>
 
-    <!-- Navigation Arrows -->
-    <a href="about.html" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+    <a href="about.html?from=left" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
       <i class="ph ph-arrow-left text-4xl"></i>
     </a>
-    <a href="contact.html" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+    <a href="contact.html?from=right" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
       <i class="ph ph-arrow-right text-4xl"></i>
     </a>
   </section>
 
-  <!-- Bar animation script -->
   <script>
-    window.onload = () => {
-      document.getElementById("mcBar").style.width = "93.7%";
-      document.getElementById("discordBar").style.width = "89%";
-    };
+    const body = document.body;
+    const urlParams = new URLSearchParams(window.location.search);
+    const from = urlParams.get("from");
+    if (from === "left") body.classList.add("swipe-left");
+    else body.classList.add("swipe-right");
   </script>
 </body>
 </html>
