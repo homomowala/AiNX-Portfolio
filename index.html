@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiNX - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #1f1f1f, #000000);
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="text-white font-mono fade-in">
+
+  <!-- Main Centered Content -->
+  <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
+    <div>
+      <h1 class="text-5xl md:text-7xl font-bold text-orange-400 mb-4 hover:scale-105 transition-transform">
+        AiNX
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300">Full-stack Minecraft / Discord Server Developer</p>
+    </div>
+
+    <!-- Right Arrow to go to about.html -->
+    <a href="about.html" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+      <i class="ph ph-arrow-right text-4xl"></i>
+    </a>
+  </section>
+
+</body>
+</html>
