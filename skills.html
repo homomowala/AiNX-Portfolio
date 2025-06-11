@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - AiNX</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #1f1f1f, #000000);
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Bar animation */
+    .bar-fill {
+      transition: width 2s ease-in-out;
+    }
+  </style>
+</head>
+<body class="text-white font-mono fade-in">
+
+  <!-- Main Content -->
+  <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
+    <div class="max-w-xl w-full space-y-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-6">My Skills</h1>
+
+      <!-- Minecraft Dev -->
+      <div class="text-left">
+        <p class="mb-2 text-gray-300">Minecraft Development <span class="text-orange-400">93.7%</span></p>
+        <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
+          <div class="bg-orange-400 h-4 bar-fill rounded-full" style="width: 0%;" id="mcBar"></div>
+        </div>
+      </div>
+
+      <!-- Discord Server Dev -->
+      <div class="text-left">
+        <p class="mt-6 mb-2 text-gray-300">Discord Server Development <span class="text-orange-400">89%</span></p>
+        <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
+          <div class="bg-orange-400 h-4 bar-fill rounded-full" style="width: 0%;" id="discordBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <a href="about.html" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+      <i class="ph ph-arrow-left text-4xl"></i>
+    </a>
+    <a href="contact.html" class="absolute right-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
+      <i class="ph ph-arrow-right text-4xl"></i>
+    </a>
+  </section>
+
+  <!-- Bar animation script -->
+  <script>
+    window.onload = () => {
+      document.getElementById("mcBar").style.width = "93.7%";
+      document.getElementById("discordBar").style.width = "89%";
+    };
+  </script>
+</body>
+</html>
