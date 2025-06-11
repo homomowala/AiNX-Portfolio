@@ -1,0 +1,75 @@
+/* styles.css */
+
+body {
+background: linear-gradient(to bottom right, #1f1f1f, #000000);
+font-family: monospace;
+color: white;
+overflow-x: hidden;
+}
+
+/* Animations */
+.swipe-left {
+animation: swipeFromLeft 0.6s ease-out;
+}
+.swipe-right {
+animation: swipeFromRight 0.6s ease-out;
+}
+
+@keyframes swipeFromLeft {
+0% {
+transform: translateX(-100%);
+opacity: 0;
+}
+100% {
+transform: translateX(0%);
+opacity: 1;
+}
+}
+
+@keyframes swipeFromRight {
+0% {
+transform: translateX(100%);
+opacity: 0;
+}
+100% {
+transform: translateX(0%);
+opacity: 1;
+}
+}
+
+input, textarea {
+background-color: #2b2b2b;
+color: white;
+}
+
+button {
+transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+background-color: #fb923c;
+transform: translateY(-2px);
+}
+/* Skill bar container */
+.skill-bar {
+height: 1rem;
+background-color: #2b2b2b;
+border-radius: 9999px;
+overflow: hidden;
+margin-top: 0.5rem;
+}
+
+/* Animated fill */
+.skill-fill {
+height: 100%;
+background-color: #fb923c;
+border-radius: 9999px;
+width: 0;
+animation: fillBar 2s ease-out forwards;
+}
+
+@keyframes fillBar {
+to {
+width: var(--fill);
+}
+}
+
