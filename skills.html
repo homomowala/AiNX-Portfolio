@@ -9,21 +9,22 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-  <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
-    <div class="max-w-lg w-full">
-      <h1 class="text-4xl text-orange-400 font-bold mb-8">My Skills</h1>
+  <div id="loader">
+    <div class="loader-ring">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 
-      <div class="text-left">
-        <p class="text-lg font-semibold">Minecraft Development <span class="float-right">93.7%</span></p>
-        <div class="skill-bar">
-          <div class="skill-fill" style="--fill: 93.7%;"></div>
-        </div>
+  <section class="flex flex-col items-center justify-center min-h-screen text-center px-6 relative">
+    <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-8">Skills</h1>
 
-        <p class="text-lg font-semibold mt-6">Discord Server Development <span class="float-right">89%</span></p>
-        <div class="skill-bar">
-          <div class="skill-fill" style="--fill: 89%;"></div>
-        </div>
-      </div>
+    <div class="w-full max-w-xl text-left">
+      <p>Minecraft Development - 93.7%</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 93.7%;"></div></div>
+
+      <p class="mt-6">Discord Server Development - 89%</p>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 89%;"></div></div>
     </div>
 
     <a href="about.html?from=left" class="absolute left-4 bottom-1/2 translate-y-1/2 text-orange-400 hover:text-orange-300 transition">
@@ -39,7 +40,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const from = urlParams.get("from");
     if (from === "left") body.classList.add("swipe-left");
-    else body.classList.add("swipe-right");
+    else if (from === "right") body.classList.add("swipe-right");
   </script>
 </body>
 </html>
