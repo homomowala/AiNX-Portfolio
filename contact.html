@@ -9,25 +9,27 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+  <div id="loader">
+    <div class="loader-ring">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   <section class="flex items-center justify-center min-h-screen text-center px-6 relative">
     <div class="max-w-xl w-full">
       <h1 class="text-4xl md:text-5xl font-bold text-orange-400 mb-6">Contact Me</h1>
 
       <form class="space-y-5">
-        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition" required>
-        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition" required>
-        <textarea rows="5" placeholder="Your Description" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none" required></textarea>
-
-        <button type="submit" class="bg-orange-500 hover:bg-orange-400 px-6 py-3 rounded-full transition shadow-md w-full">
-          Contact Me
-        </button>
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition" required>
+        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition" required>
+        <textarea rows="5" placeholder="Your Description" class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none" required></textarea>
+        <button type="submit" class="bg-orange-500 hover:bg-orange-400 px-6 py-3 rounded-full transition shadow-md w-full">Contact Me</button>
       </form>
 
       <p class="mt-6 text-sm text-gray-400">
-        Or join my Discord:
-        <a href="https://discord.gg/nxTznunYUm" target="_blank" class="text-orange-400 underline hover:text-orange-300 transition">
-          AiNX Community
-        </a>
+        Or join my Discord: 
+        <a href="https://discord.gg/nxTznunYUm" target="_blank" class="text-orange-400 underline hover:text-orange-300 transition">AiNX Community</a>
       </p>
     </div>
 
@@ -44,7 +46,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const from = urlParams.get("from");
     if (from === "left") body.classList.add("swipe-left");
-    else body.classList.add("swipe-right");
+    else if (from === "right") body.classList.add("swipe-right");
   </script>
 </body>
 </html>
