@@ -1,75 +1,99 @@
-/* styles.css */
-
 body {
-background: linear-gradient(to bottom right, #1f1f1f, #000000);
-font-family: monospace;
-color: white;
-overflow-x: hidden;
+  background: linear-gradient(to bottom right, #1f1f1f, #000000);
+  font-family: monospace;
+  color: white;
+  overflow-x: hidden;
 }
 
-/* Animations */
+/* Swipe Animations */
 .swipe-left {
-animation: swipeFromLeft 0.6s ease-out;
+  animation: swipeFromLeft 0.6s ease-out;
 }
 .swipe-right {
-animation: swipeFromRight 0.6s ease-out;
+  animation: swipeFromRight 0.6s ease-out;
 }
-
 @keyframes swipeFromLeft {
-0% {
-transform: translateX(-100%);
-opacity: 0;
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
-100% {
-transform: translateX(0%);
-opacity: 1;
-}
-}
-
 @keyframes swipeFromRight {
-0% {
-transform: translateX(100%);
-opacity: 0;
-}
-100% {
-transform: translateX(0%);
-opacity: 1;
-}
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
+/* Inputs + Buttons */
 input, textarea {
-background-color: #2b2b2b;
-color: white;
+  background-color: #2b2b2b;
+  color: white;
 }
-
 button {
-transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 button:hover {
-background-color: #fb923c;
-transform: translateY(-2px);
+  background-color: #fb923c;
+  transform: translateY(-2px);
 }
-/* Skill bar container */
+
+/* Skills */
 .skill-bar {
-height: 1rem;
-background-color: #2b2b2b;
-border-radius: 9999px;
-overflow: hidden;
-margin-top: 0.5rem;
+  height: 1rem;
+  background-color: #2b2b2b;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
-
-/* Animated fill */
 .skill-fill {
-height: 100%;
-background-color: #fb923c;
-border-radius: 9999px;
-width: 0;
-animation: fillBar 2s ease-out forwards;
+  height: 100%;
+  background-color: #fb923c;
+  border-radius: 9999px;
+  width: 0;
+  animation: fillBar 2s ease-out forwards;
 }
-
 @keyframes fillBar {
-to {
-width: var(--fill);
-}
+  to { width: var(--fill); }
 }
 
+/* Loading screen */
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-out forwards;
+  animation-delay: 1.8s;
+}
+
+.loader-ring {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.loader-ring div {
+  box-sizing: border-box;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fb923c;
+  border-radius: 50%;
+  animation: rotateHalf 1s linear infinite;
+}
+.loader-ring div:nth-child(2) {
+  border-color: #fb923c transparent transparent transparent;
+  animation-direction: reverse;
+}
+.loader-ring div:nth-child(1) {
+  border-color: transparent transparent #fb923c transparent;
+}
+
+@keyframes rotateHalf {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
